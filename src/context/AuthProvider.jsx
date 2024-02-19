@@ -7,6 +7,9 @@ const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
+  // Verificamos si hay conexión de internet
+  const isOnline = navigator.onLine;
+
   // Función autoejecutable para loguear al usuario
   useEffect(() => {
     (async () => {
@@ -47,6 +50,7 @@ const AuthProvider = ({ children }) => {
         setAuth,
         isLoading,
         setIsLoading,
+        isOnline,
         logout,
       }}
     >

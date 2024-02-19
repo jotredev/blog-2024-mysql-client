@@ -15,8 +15,11 @@ const CreatePostPage = () => {
   const [desc, setDesc] = useState("");
   const [content, setContent] = useState("");
 
-  const { auth, isLoading, setIsLoading } = useAuth();
+  const { auth, isOnline, isLoading, setIsLoading } = useAuth();
   const navigate = useNavigate();
+
+  // Verificamos si hay conexión a internet
+  if (!isOnline) return <Navigate to="/" />;
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -86,7 +89,7 @@ const CreatePostPage = () => {
       {!auth.id ? (
         <Navigate to="/auth/login" />
       ) : (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="p-5">
           <div className="mb-5">
             <label htmlFor="title">Título</label>
             <input
