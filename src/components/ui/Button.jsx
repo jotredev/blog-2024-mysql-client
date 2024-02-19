@@ -5,7 +5,7 @@ const Button = ({ text, type = "button", disabled }) => {
     <button
       type={type}
       className={cn(
-        "bg-black w-full py-4 px-4 text-white rounded-lg hover:ring-2 ring-black ring-offset-2 ring-offset-red-white transition-all duration-300"
+        "bg-black w-full py-2 px-4 text-white rounded-lg hover:ring-2 ring-black ring-offset-2 ring-offset-red-white transition-all duration-300"
       )}
       disabled={disabled}
     >
