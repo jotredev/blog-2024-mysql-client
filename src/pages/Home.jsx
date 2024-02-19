@@ -9,10 +9,11 @@ import { useState } from "react";
 
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
-  const { auth, isLoading } = useAuth();
+  const { auth, isLoading, setIsLoading } = useAuth();
 
   useEffect(() => {
     (async () => {
+      setIsLoading(true);
       try {
         const token = localStorage.getItem("token2024");
 
@@ -32,6 +33,8 @@ const HomePage = () => {
         setPosts(data.posts);
       } catch (error) {
         console.log(error);
+      } finally {
+        setIsLoading(false);
       }
     })();
   }, []);

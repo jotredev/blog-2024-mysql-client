@@ -22,7 +22,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
       >
         <div>
           <div className="mb-8">
-            <span className="w-56 h-56 mx-auto flex items-center justify-center bg-black text-white text-6xl font-bold rounded-full ring-8 ring-gray-300 uppercase">
+            <span className="w-40 h-40 mx-auto flex items-center justify-center bg-black text-white text-6xl font-bold rounded-full ring-8 ring-gray-300 uppercase">
               {`${auth.name?.charAt(0)}${auth.name?.charAt(1)}`}
             </span>
           </div>

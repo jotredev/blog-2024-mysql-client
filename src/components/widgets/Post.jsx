@@ -18,7 +18,10 @@ const Post = ({ data }) => {
           <p className="xl:absolute text-xs top-2 -left-48">
             {dateFormat(createdAt)}
           </p>
-          <Link to="/" className="text-2xl font-semibold hover:underline">
+          <Link
+            to={`/posts/${id}`}
+            className="text-2xl font-semibold hover:underline"
+          >
             {title}
           </Link>
         </div>
@@ -30,7 +33,10 @@ const Post = ({ data }) => {
         </div>
       </div>
       <p className="my-3 text-gray-500">{shortDescription}</p>
-      <Link to="/" className="flex items-center gap-x-1 w-max hover:underline">
+      <Link
+        to={`/posts/${id}`}
+        className="flex items-center gap-x-1 w-max hover:underline"
+      >
         Ver más
         <RiArrowRightSLine size={20} className="mt-1" />
       </Link>

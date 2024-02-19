@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Quill js */
+.quill-readonly .ql-container {
+  border: none !important;
+}
+
+.quill-readonly .ql-container .ql-editor {
+  padding: 0 !important;
+}
