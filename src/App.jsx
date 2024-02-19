@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/AuthProvider";
 // Layouts
 import AuthLayout from "./layouts/AuthLayout";
 import MainLayout from "./layouts/MainLayout";
@@ -12,18 +13,20 @@ import PostDetailsPage from "./pages/PostDetails";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage />} />
-        <Route path="new" element={<CreatePostPage />} />
-        <Route path="posts/:postId" element={<PostDetailsPage />} />
-      </Route>
-      <Route path="/auth" element={<AuthLayout />}>
-        <Route path="login" element={<LoginPage />} />
-        <Route path="register" element={<RegisterPage />} />
-      </Route>
-      <Route path="/*" element={<NotFoundPage />} />
-    </Routes>
+    <AuthProvider>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="new" element={<CreatePostPage />} />
+          <Route path="posts/:postId" element={<PostDetailsPage />} />
+        </Route>
+        <Route path="/auth" element={<AuthLayout />}>
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+        </Route>
+        <Route path="/*" element={<NotFoundPage />} />
+      </Routes>
+    </AuthProvider>
   );
 }
 

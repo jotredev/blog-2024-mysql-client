@@ -2,9 +2,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 
-import Button from "../../components/ui/Button";
 import { validateEmail } from "../../helpers/Validators";
 import { axiosClient } from "../../services/AxiosClient";
+
+import Button from "../../components/ui/Button";
 
 const RegisterPage = () => {
   const [name, setName] = useState("");
