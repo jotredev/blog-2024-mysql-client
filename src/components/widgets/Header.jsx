@@ -36,8 +36,8 @@ const Header = () => {
               onClick={() => setShowSidebar(true)}
               className="flex items-center gap-x-3"
             >
-              <span className="bg-black w-7 h-7 flex items-center justify-center rounded-full text-white text-sm">
-                JT
+              <span className="bg-black w-7 h-7 flex items-center justify-center rounded-full text-white text-sm uppercase">
+                {`${auth.name?.charAt(0)}${auth.name?.charAt(1)}`}
               </span>
               <div className="flex flex-col items-start">
                 <div className="flex items-center justify-between">
