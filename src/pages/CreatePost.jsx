@@ -24,7 +24,7 @@ const CreatePostPage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    if ([title, content].includes("")) {
+    if ([title, desc, content].includes("")) {
       return toast.error("Todos los campos son obligatorios");
     }
 
